@@ -24,7 +24,7 @@ function StudentForm() {
     e.preventDefault(); // prevent the default behaviour of the form submission
 
     try {
-      const res = await fetch("http://localhost:5004/students", {
+      const res = await fetch("https://fsd-backend-nuo6.onrender.com/students", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
