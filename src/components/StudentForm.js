@@ -24,16 +24,19 @@ function StudentForm() {
     e.preventDefault(); // prevent the default behaviour of the form submission
 
     try {
-      const res = await fetch("https://fsd-backend-nuo6.onrender.com/students", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(student),
-      });
+      const res = await fetch(
+        "https://fsd-backend-nuo6.onrender.com/students",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(student),
+        }
+      );
 
       if (res.ok) {
-        const data = await res.json();
+        await res.json();
 
         //clear form
         setStudent({
@@ -79,7 +82,7 @@ function StudentForm() {
         <button type="submit">Submit</button>
       </form>
     </>
-  )
+  );
 }
 
 export default StudentForm;
